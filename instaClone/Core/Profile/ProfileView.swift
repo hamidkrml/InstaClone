@@ -8,74 +8,23 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
-    private let gridItems:[GridItem] = [
-        .init(.flexible(),spacing: 5),
-        .init(.flexible(),spacing: 5),
-        .init(.flexible(),spacing: 5)
-    ]
-    
-    var body: some View {
-        
-        
+    var body: some View { 
         NavigationStack {
             ScrollView {
                 VStack{
                     //Header
                     VStack(spacing:10) {
                         //Profil Karti
-                        HStack{
-                            Image("ben")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 80,height: 80)
-                                .clipShape(Circle())
-                            
-                            Spacer()
-                            HStack(spacing: 8){
-                                UserStatView(value: 10, title: "post")
-                                UserStatView(value: 49, title: "takipci")
-                                UserStatView(value: 67, title: "takipcile")
-                            }
-                            
+                        HStack {
+                            ProfileHeaderView(avatarImageName: "ben", fullName: "hamidKarimli", bio: "ios Developer")
+                            ProfileStatsView(posts: 12 , followers: 12, following: 14)
                         }
-                        .padding(.horizontal)
-                        
-                        // Ad ve aciklama kismi
-                        VStack(alignment: .leading,spacing: 4){
-                            Text("Hamid Karimli")
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                            Text("Ios Devloper ")
-                                .font(.footnote)
-                            
-                        }
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .padding(.horizontal)
                         
                         //Edit Button
-                        Button{
-                            
-                        }label: {
-                            Text("EditProfile")
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                                .frame(maxWidth: .infinity,minHeight: 32)
-                                .foregroundStyle(Color("ButtonText"))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .stroke(.gray,lineWidth: 2)
-                                )}
+                        EditProfileButton{print("hamit")}
                         Divider()
                     }
-                    LazyVGrid(columns: gridItems,spacing: 1){
-                        ForEach(0...9,id: \.self){ index in
-                            Image(systemName: "swift")
-                                .resizable()
-                                .scaledToFill()
-                                .padding(.bottom)
-                        }
-                    }
+                    ProfileGridView(imageName: "swift")
                 }
             }
             .navigationTitle("profile")
