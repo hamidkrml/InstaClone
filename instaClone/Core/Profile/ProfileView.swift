@@ -21,30 +21,9 @@ struct ProfileView: View {
                     .clipShape(Circle())
                 
                 
-                VStack{
-                    Text("10")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                    Text("Post")
-                        .font(.subheadline)
-                }
-                .frame(width: 60)
-                VStack{
-                    Text("10")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                    Text("Post")
-                        .font(.subheadline)
-                }
-                .frame(width: 60)
-                VStack{
-                    Text("10")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                    Text("Post")
-                        .font(.subheadline)
-                }
-                .frame(width: 60)
+                UserStatView(value: 10, title: "post")
+                UserStatView(value: 49, title: "takipci")
+                UserStatView(value: 67, title: "takipciler")
             }
             
             // Ad ve aciklama kismi
