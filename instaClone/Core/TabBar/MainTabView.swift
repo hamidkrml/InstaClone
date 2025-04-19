@@ -10,31 +10,31 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView{
-            Text("AnaSayfa")
+            FeedView()
                 .tabItem{
                     Image(systemName: "house")
-                    Text("swift")
+                    
                 }
             
             Text("Search")
                 .tabItem{
                     Image(systemName: "magnifyingglass")
-                    Text("swift")
+                   
                 }
             Text("UploadPost")
                 .tabItem{
                     Image(systemName: "plus")
-                    Text("swift")
+                    
                 }
             Text("Notfications")
                 .tabItem{
                     Image(systemName: "heart")
-                    Text("swift")
+                    
                 }
-            ContentView()
+            ProfileView()
                 .tabItem{
                     Image(systemName: "person")
-                    Text("swift")
+                   
                 }
                
         }
