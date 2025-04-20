@@ -14,24 +14,7 @@ struct SearchView: View {
             ScrollView{
                 LazyVStack{
                     ForEach(0...20,id: \.self){ user in
-                        HStack{
-                            Image(systemName: "swift")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                            
-                            VStack(alignment: .leading){
-                                Text("Kullanci Adi")
-                                    .fontWeight(.semibold)
-                                    .foregroundStyle(Color("ButtonText"))
-                                Text("KullanciIsimSoyIsimi")
-                                    .foregroundStyle(Color("ButtonText"))
-                            }
-                            .font(.footnote)
-                            Spacer()
-                        }
-                        .padding(.horizontal)
+                        Searchuserfotoname(userfoto: "swift", username: "HamidKarimli", useryorumu: "IosDevloper")
                     }
                 }
                 .searchable(text: $searchText, prompt: "Kullanci Adin Yaziniz")
