@@ -57,7 +57,7 @@ struct LoginView: View {
                     
                 )
                 .padding(.horizontal,25)
-                //sifreni degistir 
+                //sifreni degistir
                 Button{}label: {
                     Text("sifreni gucenle")
                         .font(.footnote)
@@ -66,8 +66,15 @@ struct LoginView: View {
                         .padding(.trailing,25)
                 }
                 .frame(maxWidth: .infinity,alignment: .trailing)
-                
-                
+                HStack{
+                    Rectangle()
+                        .frame(height: 0.5)
+                    Text("Veya")
+                    Rectangle()
+                        .frame(height: 0.5)
+                }
+                .padding(.horizontal,24)
+                .foregroundStyle(.gray)
             }
             
             
