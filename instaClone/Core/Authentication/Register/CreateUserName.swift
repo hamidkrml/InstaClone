@@ -1,21 +1,20 @@
 //
-//  AddMailView.swift
+//  CreateUserName.swift
 //  instaClone
 //
-//  Created by hamid on 21.04.2025.
+//  Created by hamid on 23.04.2025.
 //
 
 import SwiftUI
 
-struct AddMailView: View {
-    @State private var email: String = ""
+struct CreateUserName: View {
+    @State private var userName = ""
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
-            
             VStack(spacing: 12) {
                 Spacer()
-                Text("email ekleyin")
+                Text("kullanci adiniz giriniz")
                     .font(.footnote)
                     .fontWeight(.bold)
                     .foregroundStyle(Color("ButtonText"))
@@ -26,13 +25,13 @@ struct AddMailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
                 
-                TextField("Email",text: $email)
+                TextField("Email",text: $userName)
                     .textInputAutocapitalization(.none)
                     .modifier(IGTextFieldModifier())
-
+                
                 
                 NavigationLink{
-                    CreateUserName()
+                    CreatPasswordView()
                         .navigationBarBackButtonHidden()
                 }label: {
                     ButtonCompent(button: "Ileri")
@@ -41,7 +40,7 @@ struct AddMailView: View {
                 Spacer()
             }.toolbar{
                 ToolbarItem(placement: .topBarLeading) {
-                        
+                    
                     Image(systemName: "chevron.left")
                         .foregroundColor(.black)
                         .imageScale(.large)
@@ -51,9 +50,10 @@ struct AddMailView: View {
                 }
             }
         }
+
     }
 }
 
 #Preview {
-    AddMailView()
+    CreateUserName()
 }
