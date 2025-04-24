@@ -14,11 +14,17 @@ struct SearchView: View {
             ScrollView{
                 LazyVStack{
                     ForEach(User.MOCK_USER){ user in
-                        Searchuserfotoname(userfoto: user.profilimage ?? "", username: user.username, useryorumu: user.fullname ?? "")
+                        NavigationLink(value:user) {
+                            Searchuserfotoname(userfoto: user.profilimage ?? "", username: user.username, useryorumu: user.fullname ?? "")
+                        }
                     }
                 }
                 .searchable(text: $searchText, prompt: "Kullanci Adin Yaziniz")
             }
+            .navigationDestination(for: User.self, destination:{
+                user in
+                ProfileView()
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }
