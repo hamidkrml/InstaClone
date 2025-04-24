@@ -13,8 +13,8 @@ struct SearchView: View {
         NavigationStack {
             ScrollView{
                 LazyVStack{
-                    ForEach(0...20,id: \.self){ user in
-                        Searchuserfotoname(userfoto: "swift", username: "HamidKarimli", useryorumu: "IosDevloper")
+                    ForEach(User.MOCK_USER){ user in
+                        Searchuserfotoname(userfoto: user.profilimage ?? "", username: user.username, useryorumu: user.fullname ?? "")
                     }
                 }
                 .searchable(text: $searchText, prompt: "Kullanci Adin Yaziniz")

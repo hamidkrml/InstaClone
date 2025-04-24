@@ -13,7 +13,7 @@ struct Searchuserfotoname: View {
     let useryorumu:String
     var body: some View {
         HStack{
-            Image(systemName: userfoto)
+            Image(userfoto)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 40, height: 40)
