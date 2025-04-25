@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText: String = ""
     var body: some View {
-        NavigationStack {
+       NavigationStack {
             ScrollView{
                 LazyVStack{
                     ForEach(User.MOCK_USER){ user in
@@ -23,7 +23,7 @@ struct SearchView: View {
             }
             .navigationDestination(for: User.self, destination:{
                 user in
-                ProfileView()
+                ProfileView(user: user)
             })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)

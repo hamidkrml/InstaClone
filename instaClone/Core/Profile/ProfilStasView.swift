@@ -14,7 +14,7 @@ struct ProfileStatsView: View {
     let following: Int
 
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 8) {
             UserStatView(value: posts, title: "Post")
             UserStatView(value: followers, title: "Takipçi")
             UserStatView(value: following, title: "Takip")

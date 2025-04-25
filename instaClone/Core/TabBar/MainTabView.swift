@@ -31,7 +31,7 @@ struct MainTabView: View {
                     Image(systemName: "heart")
                     
                 }
-            ProfileView()
+            UserProfileview()
                 .tabItem{
                     Image(systemName: "person")
                    

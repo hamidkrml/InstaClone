@@ -1,33 +1,31 @@
 //
-//  ProfileView.swift
+//  UserProfileview.swift
 //  instaClone
 //
-//  Created by hamid on 18.04.2025.
+//  Created by hamid on 25.04.2025.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
-    
-    let user :User
+struct UserProfileview: View {
     var body: some View {
-     // NavigationStack {
+      NavigationStack {
             ScrollView {
                 VStack{
                     //Header
                     VStack(spacing:10) {
                         //Profil Karti
                         HStack {
-                            ProfileHeaderView(avatarImageName: user.profilimage ?? "")
+                            ProfileHeaderView(avatarImageName: "ben")
                             Spacer()
                             
                             ProfileStatsView(posts: 12 , followers: 12, following: 14)
                         }
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(user.fullname ?? "")
+                            Text("HamidKarimli")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
-                            Text(user.bio ?? "")
+                            Text("Ios Devloper")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                         }
@@ -42,7 +40,18 @@ struct ProfileView: View {
             }
             .navigationTitle("profile")
             .navigationBarTitleDisplayMode(.inline)
-            
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing){
+                    Button{}label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(Color("ButtonText"))
+                    }
+                }
+            }
         }
     }
-//}
+}
+
+#Preview {
+    UserProfileview()
+}
